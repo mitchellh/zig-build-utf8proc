@@ -11,5 +11,5 @@ out=${2:-upstream}
 rm -rf $out
 git clone https://github.com/JuliaStrings/utf8proc.git $out
 git -C $out checkout $ref
+git -C $out rev-parse HEAD > ${out}.txt
 rm -rf $out/.git
-echo $ref > ${out}.txt
