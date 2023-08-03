@@ -16,7 +16,29 @@ specific version and verify the checksums match yourself.
 
 ## Usage
 
-TODO
+Create a `build.zig.zon` like so:
+
+```zig
+.{
+    .name = "my-project",
+    .version = "0.0.0",
+    .dependencies = .{
+        .utf8proc = .{
+            .url = "https://github.com/mitchellh/zig-build-utf8proc/archive/<git-ref-here>.tar.gz",
+            .hash = "12208070233b17de6be05e32af096a6760682b48598323234824def41789e993432c",
+        },
+    },
+}
+```
+
+And in your `build.zig`:
+
+```
+const utf8proc= b.dependency("utf8proc", .{ .target = target, .optimize = optimize });
+exe.linkLibrary(utf8proc_dep.artifact("utf8proc"));
+```
+
+In your code you can now `@cImport` the project.
 
 ## Versions
 
