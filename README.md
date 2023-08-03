@@ -33,7 +33,7 @@ Create a `build.zig.zon` like so:
 
 And in your `build.zig`:
 
-```
+```zig
 const utf8proc= b.dependency("utf8proc", .{ .target = target, .optimize = optimize });
 exe.linkLibrary(utf8proc_dep.artifact("utf8proc"));
 ```
