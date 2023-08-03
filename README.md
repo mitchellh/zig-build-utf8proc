@@ -14,6 +14,10 @@ shell script contents, it is written in a plain way.
 I implore that you do not blindly trust me -- pin this repository to a
 specific version and verify the checksums match yourself.
 
+## Usage
+
+TODO
+
 ## Versions
 
 This project makes no guarantee to stay up to date with every released
