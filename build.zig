@@ -12,6 +12,7 @@ pub fn build(b: *std.Build) !void {
     lib.linkLibC();
     lib.addIncludePath(.{ .path = "upstream" });
     lib.addCSourceFiles(srcs, &.{});
+    lib.installHeader("upstream/utf8proc.h", "utf8proc.h");
 
     b.installArtifact(lib);
 }
